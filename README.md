@@ -64,11 +64,11 @@ Quickstart
 
         and can be deserialized again using de.aitools.aq.geolocating.Geolocalization#parse(InputStream)
 
-   - You can test if everything works using
+  - You can test if everything works using
 
             java -Xmx8G -cp <classpath> de.aitools.aq.geolocating.Geolocator data/iplocation-parsed data/rir-parsed example.txt "YYYY-MM-dd'T'HH:mm:ss" example-geolocated.txt
 
-     The output should be something like this (written to standard output, in this case it shows that it decided three times for "true" (i.e.: valid geolocalization) as in all three cases there was information from RIR and Iplocation, and this information was not inconsistent but time zone consistent):
+    The output should be something like this (written to standard output, in this case it shows that it decided three times for "true" (i.e.: valid geolocalization) as in all three cases there was information from RIR and Iplocation, and this information was not inconsistent but time zone consistent):
 
            Decisions:
            3
@@ -85,11 +85,11 @@ Quickstart
                1 time zone = false	0	false
            RIR = false	0	false
 
-     And this (written to example-geolocated.txt):
+    And this (written to example-geolocated.txt):
 
            70.19.29.244	2016-01-04T07:42:27Z	America/New_York	US
            31.121.85.30	2016-01-04T07:29:15Z	Europe/London	GB
            86.23.18.214	2014-12-29T14:36:33Z	Europe/London	GB
 
-     Where the third column gives the Olson time zone and the fourth column gives the country code.
+    Where the third column gives the Olson time zone and the fourth column gives the country code. Third and fourth column will be missing if not enough or conflicting geolocation information is available.
 

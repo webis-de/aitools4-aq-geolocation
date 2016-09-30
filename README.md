@@ -3,9 +3,11 @@ AItools 4 - Acquisition - Geolocation
 
 Library and program for the historical geolocalization of IP addresses.
 
+The program allows you to geolocate IP addresses for specific time instants in the past. It incorporates data from the different regional Internet registries (RIRs) as well as from IPlocation database files (you can get a current IPlocation file from https://lite.ip2location.com/database-ip-country-region-city-latitude-longitude-zipcode-timezone ).
 
-The program allows you to geolocate IP addresses for specific time instants in the past. It incorporates data from the different regional Internet registries (RIRs) as well as from IPlocation database files (you can get a current IPlocation file from https://lite.ip2location.com/database-ip-country-region-city-latitude-longitude-zipcode-timezone ). More IPlocation databases will improve the reliability of the geolocalization, but the program will in any case only output geolocations if it is somewhat sure about it. However, you will need older IPlocation databases when you want to geolocate addresses at older times. This site or product includes IP2Location LITE data available from <a href="http://lite.ip2location.com">http://lite.ip2location.com</a>.
+The program uses RIR data to determine when IP addresses are reassigned and assumes---if it does not have contradicting information---that IP addresses do not change their geolocation (i.e., their time zone) when they are not reassigned.
 
+Since RIR data does not contain geolocation information other than the country, IPlocation databases are used to determine the time zone of an IP address. More IPlocation databases will improve the reliability of the geolocalization, but the program will in any case only output geolocations if it is somewhat sure about it. However, you will need older IPlocation databases when you want to geolocate addresses at older times. This site or product includes IP2Location LITE data available from <a href="http://lite.ip2location.com">http://lite.ip2location.com</a>.
 
 Provided time data version: April 2016
 
@@ -30,6 +32,7 @@ Setup
 
       - If not, see the readme accompanying the tool
   - Process IPlocation databases.
+      - Github: You should have already received one parsed IP2location Lite DB11 along with this code that you can use to test this software in iplocation-parsed: just unzip it.
       - Put all your IPlocation database CSV files in one directory (we here use "data/iplocation")
       - The files may have to be renamed (file format is detected by file name). The format is displayed when you run with your classpath:
 

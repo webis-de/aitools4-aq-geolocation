@@ -24,7 +24,10 @@ Setup
       - /resources/de/aitools/aq/geolocating/timezones/tz_world.* from http://efele.net/maps/tz/world/
   - You also might have to update the time zone database of your Java VM (if you get errors that some time zone is unknown)
       - Get the Java Time Zone Updater Tool from http://www.oracle.com/technetwork/java/javase/downloads/index.html
-      - After uncompressing, it should suffice to do: sudo java -jar tzupdater.jar -l
+      - After uncompressing, it should suffice to do:
+      
+            sudo java -jar tzupdater.jar -l
+
       - If not, see the readme accompanying the tool
   - Process IPlocation databases.
       - Put all your IPlocation database CSV files in one directory (we here use "data/iplocation")
@@ -63,7 +66,7 @@ Quickstart
 
    - You can test if everything works using
 
-          java -Xmx8G -cp <classpath> de.aitools.aq.geolocating.Geolocator data/iplocation-parsed data/rir-parsed example.txt "YYYY-MM-dd'T'HH:mm:ss" example-geolocated.txt
+            java -Xmx8G -cp <classpath> de.aitools.aq.geolocating.Geolocator data/iplocation-parsed data/rir-parsed example.txt "YYYY-MM-dd'T'HH:mm:ss" example-geolocated.txt
 
      The output should be something like this (written to standard output, in this case it shows that it decided three times for "true" (i.e.: valid geolocalization) as in all three cases there was information from RIR and Iplocation, and this information was not inconsistent but time zone consistent):
 

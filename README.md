@@ -15,7 +15,7 @@ Requirements
   - You need to have the following libraries in your Java class path:
     - Geotools 15.1  http://www.geotools.org/
     - Trove 3.0.0:   http://trove.starlight-systems.com/
-  - Github: The provided jar contains the libraries, so you can just put the jar in your class path
+  - Github: The provided jar (in lib/) contains these libraries, so you can just put the jar in your class path
 
 Setup
 -----
@@ -92,7 +92,4 @@ Quickstart
            86.23.18.214	2014-12-29T14:36:33Z	Europe/London	GB
 
      Where the third column gives the Olson time zone and the fourth column gives the country code.
-
-
-[end]
 

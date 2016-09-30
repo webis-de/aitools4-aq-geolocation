@@ -4,7 +4,7 @@ AItools 4 - Acquisition - Geolocation
 Library and program for the historical geolocalization of IP addresses.
 
 
-The program allows you to geolocate IP addresses for specific time instants in the past. It incorporates data from the different regional Internet registries (RIRs) as well as from IPlocation database files (you can get a current IPlocation file from https://lite.ip2location.com/database-ip-country-region-city-latitude-longitude-zipcode-timezone ). More IPlocation databases will improve the reliability of the geolocalization, but the program will in any case only output geolocations if it is somewhat sure about it. However, you will need older IPlocation databases when you want to geolocate addresses at older times.
+The program allows you to geolocate IP addresses for specific time instants in the past. It incorporates data from the different regional Internet registries (RIRs) as well as from IPlocation database files (you can get a current IPlocation file from https://lite.ip2location.com/database-ip-country-region-city-latitude-longitude-zipcode-timezone ). More IPlocation databases will improve the reliability of the geolocalization, but the program will in any case only output geolocations if it is somewhat sure about it. However, you will need older IPlocation databases when you want to geolocate addresses at older times. This site or product includes IP2Location LITE data available from <a href="http://lite.ip2location.com">http://lite.ip2location.com</a>.
 
 
 Provided time data version: April 2016
@@ -31,7 +31,11 @@ Setup
       - If not, see the readme accompanying the tool
   - Process IPlocation databases.
       - Put all your IPlocation database CSV files in one directory (we here use "data/iplocation")
-      - Run with your classpath:
+      - The files may have to be renamed (file format is detected by file name). The format is displayed when you run with your classpath:
+
+            java -Xmx8G -cp <classpath> de.aitools.aq.geolocating.iplocations.IplocationIpBlocks
+
+      - After renaming, run with your classpath:
 
             java -Xmx8G -cp <classpath> de.aitools.aq.geolocating.iplocations.IplocationIpBlocks data/iplocation data/iplocation-parsed
 

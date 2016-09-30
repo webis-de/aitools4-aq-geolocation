@@ -13,10 +13,23 @@ import java.util.TimeZone;
 import de.aitools.aq.geolocating.timezones.TimeZoneMap;
 import de.aitools.aq.geolocating.timezones.TimeZones;
 
+/**
+ * Reads IPligence database files.
+ * <p>
+ * Files have to be named to match <tt>ipligence-(\\d){6}.csv</tt> where the
+ * six digits gives the year (4 digits) and month (2 digits). Example:
+ * <tt>ipligence-201606.csv</tt>.
+ * </p> 
+ *
+ * @author johannes.kiesel@uni-weimar.de
+ *
+ */
 public class IpligenceParser extends IplocationCsvParser {
+  
+  public static String FILE_NAME_FORMAT = "ipligence-(\\d){6}.csv";
 
   public IpligenceParser(final TimeZoneMap timeZoneMap) {
-    super(timeZoneMap, "ipligence-(\\d){6}.csv", Charset.forName("ISO8859-1"));
+    super(timeZoneMap, FILE_NAME_FORMAT, Charset.forName("ISO8859-1"));
   }
 
   @Override

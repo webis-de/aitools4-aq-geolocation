@@ -206,9 +206,12 @@ implements Comparable<IplocationIpBlocks> {
       System.err.println("Where:");
       System.err.println("  input");
       System.err.println("    Is the directory that contains the CSV files.");
-      System.err.println("    Currently supported formats:");
-      System.err.println("      - IPligence");
-      System.err.println("      - IP2Location DB11");
+      System.err.println("    The CSV format is detected based on the file name.");
+      System.err.println("    Currently supported CSV formats with file name syntax:");
+      System.err.println("      - IPligence: " + IpligenceParser.FILE_NAME_FORMAT);
+      System.err.println("      - IP2Location DB11: " + Ip2locationDb11Parser.FILE_NAME_FORMAT);
+      System.err.println("    Where the six digits gives the year (4 digits) and");
+      System.err.println("    month (2 digits).");
       System.err.println("  output");
       System.err.println("    Is the directory to which the processed files will");
       System.err.println("    be written (then to be used by");

@@ -11,10 +11,23 @@ import java.util.TimeZone;
 
 import de.aitools.aq.geolocating.timezones.TimeZoneMap;
 
+/**
+ * Reads IP2Location DB11 database files.
+ * <p>
+ * Files have to be named to match <tt>ip2location-db11(lite)?-(\\d){6}.csv</tt>
+ * where the six digits gives the year (4 digits) and month (2 digits). Example:
+ * <tt>ip2location-db11lite-201606.csv</tt>.
+ * </p> 
+ *
+ * @author johannes.kiesel@uni-weimar.de
+ *
+ */
 public class Ip2locationDb11Parser extends IplocationCsvParser {
+  
+  public static String FILE_NAME_FORMAT = "ip2location-db11(lite)?-(\\d){6}.csv"; 
 
   public Ip2locationDb11Parser(final TimeZoneMap timeZoneMap) {
-    super(timeZoneMap, "ip2location-db11(lite)?-(\\d){6}.csv",
+    super(timeZoneMap, FILE_NAME_FORMAT,
         Charset.forName("ISO8859-1"));
   }
 

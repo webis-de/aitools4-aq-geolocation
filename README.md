@@ -51,7 +51,7 @@ Setup
 
 Quickstart
 ----------
-  - Run with your <classpath>:
+  - Run with your classpath:
 
         java -Xmx8G -cp <classpath> de.aitools.aq.geolocating.Geolocator data/iplocation-parsed data/rir-parsed <input> <time-format> <output>
 
